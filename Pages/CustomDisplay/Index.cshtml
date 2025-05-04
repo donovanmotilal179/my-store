@@ -1,0 +1,23 @@
+﻿@page
+@*@model MyStore.Pages.CustomDisplay.IndexModel*@
+@{
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main Page</title>
+</head>
+<body>
+
+    @*@RenderPage("~/CustomDisplay/header.cshtml")*@
+    <partial name="header.cshtml" />
+
+    <h1>Index Page Content</h1>
+    <p>This is the content of the main page.</p>
+
+    @*@RenderPage("~/CustomDisplay/menu_adv.cshtml")*@
+    <partial name="menu_adv.cshtml" />
+
+</body>
+</html>

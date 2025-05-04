@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MyStore</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MyStore.styles.css" asp-append-version="true" />
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">MyStore</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Animals/Index">Animals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Clients/Index">Clients</a>
+                        </li>
+                        
+                        @* TO ADD A DROPDOWN MENU AND SUBMENU FOLLOW THE STEPS BELOW.
+                            1. Copy the Script.js file in this application to the js folder in the target application.
+                            2. Copy the Style.css file in this application to the css folder in the target application.
+                            3. View the lines of code below from line 44 to 85 to see how a dropdown menu is added together
+                               with submenus. Implement the same style of code in the target application.
+
+                        *@
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" asp-area="" asp-page="">Dropdown Menu</a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-page="/Clients/Index">Clients</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-page="/Animals/Index">Animals</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-page="/Clients/Index">Clients</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-page="/Animals/Index">Animals</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" asp-area="" asp-page="/Clients/Index">Clients</a>
+                                </li>
+                                <li class="nav-item dropdown" id="myDropdown">
+                                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" asp-area="" asp-page="">Submenu Dropdown 1</a>
+                                    <ul class="submenu dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" asp-area="" asp-page="/Animals/Index">Animals</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" asp-area="" asp-page="/Clients/Index">Clients</a>
+                                        </li>
+                                        <li class="nav-item dropdown" id="myDropdown">
+                                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" asp-area="" asp-page="">Submenu Dropdown 2</a>
+                                            <ul class="submenu dropdown-menu">
+                                                <li>
+                                                    <a class="dropdown-item" asp-area="" asp-page="/Animals/Index">Animals</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" asp-area="" asp-page="/Clients/Index">Clients</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>                            
+                            <a class="nav-link text-dark" asp-area="" asp-page="/../Index">Content Layout</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - MyStore - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/js/script.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

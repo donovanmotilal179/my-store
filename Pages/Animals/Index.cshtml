@@ -1,0 +1,39 @@
+﻿@page
+@model MyStore.Pages.Animals.IndexModel
+@{
+}
+
+<br />
+<h2>List of Animals</h2>
+<a class="btn btn-primary btn-sm" href='/Animals/Create'>New Animal</a>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Diet</th>
+            <th>Supplements</th>
+            <th>Created At</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model._listAnimals)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.name</td>
+                <td>@item.type</td>
+                <td>@item.diet</td>
+                <td>@item.supplements</td>
+                <td>@item.createdAt</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Animals/Edit?id=@item.id">Edit</a>
+                    <a class="btn btn-primary btn-sm" onclick="return confirm('Are you sure you want to delete?');" href="/Animals/Del?id=@item.id">Delete</a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>

@@ -1,0 +1,78 @@
+﻿@page
+@model MyStore.Pages.Animals.CreateModel
+@{
+}
+
+<br>
+<h2>New Animal</h2>
+
+@if (Model.animalErrorMessage != null && Model.animalErrorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissable fade show' role='alert'>
+        <strong>@Model.animalErrorMessage</strong>
+        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+}
+
+
+<form method="post">
+    <div class="row mb-3">
+        <label class="=col-sm-3 col-form-label">Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="name" value="@Model.animalInfo.name" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="=col-sm-3 col-form-label">Type</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="type" value="@Model.animalInfo.type" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="=col-sm-3 col-form-label">Diet</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="diet" value="@Model.animalInfo.diet" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="=col-sm-3 col-form-label">Supplements</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="supplements" value="@Model.animalInfo.supplements" />
+        </div>
+    </div>
+
+    @if (Model.animalSuccessMessage != null && Model.animalSuccessMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                    <strong>@Model.animalSuccessMessage</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    }
+    @if (Model.animalErrorMessage != null && Model.animalErrorMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class='alert alert-success alert-dismissible fade show' role='alert'>
+                    <strong>@Model.animalErrorMessage</strong>
+                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+        </div>
+    </div>
+
+</form>
